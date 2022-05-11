@@ -650,7 +650,7 @@
 .footer__form-wrapper {
     position: relative;
     display: flex;
-    border: 1px solid grey;
+    /* border: 1px solid grey; */
 }
 
 .footer__subscribe-form-address {
@@ -694,3 +694,51 @@
     margin: 20px 0 0 0;
     color: #FFFFFF;
 }
+
+.accor-container {
+    position: relative;
+}
+.accor-chb {
+position: absolute;
+display: none;
+}
+
+.accor-lb:before {
+    display: inline-block;
+    content: '\276F';
+    transform: rotate(-90deg);
+}
+
+
+.accor-chb:checked + .accor-lb:before {
+    transition: transform .35s;
+    transform: rotate(90deg);
+}
+
+.accor-chb:checked ~ .accor__body {
+    max-height: 0;
+    transition: max-height 0.5s ease-in;
+    /* box-sizing: border-box; */
+}
+
+.accor-lb {
+    cursor: pointer;
+    font-size: 24px;
+    display: block;
+    background: linear-gradient(0deg, rgba(250,248,240,1) 0%, rgba(205,203,195,1) 100%);
+    text-align: center;
+    transition: background-color 1s linear;
+}
+
+.accor-lb:hover {
+    background-color: violet;
+}
+
+
+
+.accor__body {
+    max-height: 410px;
+    transition: max-height 0.5s ease-out;
+    overflow: hidden;
+}
+
